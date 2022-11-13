@@ -129,46 +129,41 @@ footer {
   font-size: min(max(14px, 1.2vw), 48px);
   position: fixed;
   bottom: 4vh;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 4vh;
   border: solid 1px #c9d1d9;
-  padding: 0.4em;
+  border-radius: 0.4em;
   color: inherit;
-  opacity: 0.6;
-  text-align: center;
-  transition: padding 0.8s ease-in-out;
+  opacity: 0.8;
 }
 
-footer a {
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-.btn {
-  display: inline;
-  text-decoration: none;
-}
-
-.btn:hover, .btn:active {
-  text-decoration: underline;
-}
-
-footer:hover,
-footer:focus {
-  opacity: 1;
+footer details summary:hover, footer details summary:active {
   cursor: pointer;
 }
 
-.fadein-slow {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 120s;
-  animation-duration: 120s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+footer details {
+    padding: .5em .5em 0;
+}
+
+footer details summary {
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+footer details[open] {
+    padding: .5em;
+}
+
+footer details[open] summary {
+    border-bottom: 1px solid #c9d1d9;
+    margin-bottom: .5em;
+}
+
+footer details p a {
+  text-decoration: none;
+}
+
+footer details p a:hover {
+  text-decoration: underline;
 }
 
 .fadein {
@@ -180,12 +175,21 @@ footer:focus {
   animation-fill-mode: both;
 }
 
+.fadein-slow {
+  -webkit-animation-name: fadeInless;
+  animation-name: fadeInless;
+  -webkit-animation-duration: 120s;
+  animation-duration: 120s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
-    opacity: 0.6;
+    opacity: 0.9;
   }
 }
 
@@ -194,6 +198,24 @@ footer:focus {
     opacity: 0;
   }
   100% {
-    opacity: 0.6;
+    opacity: 0.9;
+  }
+}
+
+@-webkit-keyframes fadeInless {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInless {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
   }
 }
