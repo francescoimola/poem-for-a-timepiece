@@ -1,0 +1,214 @@
+/* Our default values set as CSS variables */
+:root {
+  --second: 1s;
+  --minute: calc(var(--second) * 60);
+  --hour: calc(var(--minute) * 60);
+}
+
+@keyframes tick {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  height: 98%;
+  width: 100%;
+  font-size: min(max(14px, 1.5vw), 56px);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: sans-serif, "Helvetica Neue", Arial, -apple-system,
+    BlinkMacSystemFont, Segoe UI;
+  color: #c9d1d9;
+  background: #0d1117;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s; /* Safari */
+}
+
+html,
+body,
+p,
+h1,
+td,
+tr,
+table,
+#clock-row,
+.clock {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #1268f3;
+}
+
+td {
+  text-align: center;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+td.clock-row {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  padding-top: 2em;
+}
+
+.clock {
+  font-size: 2em;
+  display: flex;
+  --setTimeHour: 0;
+  --setTimeMinute: 0;
+  --timeShiftHour: calc(var(--setTimeHour) * var(--hour));
+  --timeShiftMinute: calc(var(--setTimeMinute) * var(--minute));
+  width: 5em;
+  height: 2em;
+}
+
+.section > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section > ul > li {
+  width: 100%;
+  height: 2em;
+}
+
+.section {
+  width: calc(100% / 3);
+}
+
+.second > ul {
+  animation: tick steps(60) var(--minute) infinite;
+}
+
+.minute > ul {
+  animation: tick steps(60) var(--hour) infinite;
+  animation-delay: calc(var(--timeShiftMinute) * -1);
+}
+
+.hour > ul {
+  animation: tick steps(24) calc(24 * var(--hour)) infinite;
+  animation-delay: calc(var(--timeShiftHour) * -1);
+}
+
+footer {
+  font-size: min(max(14px, 1.2vw), 48px);
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 1px #c9d1d9;
+  padding: 0.4em;
+  color: inherit;
+  opacity: 0.5;
+  text-align: center;
+  transition: padding 0.8s ease-in-out;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#about {
+  display: none;
+  visibility: hidden;
+}
+
+.btn {
+  display: inline;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+#about:target {
+  display: inline;
+  visibility: revert;
+}
+
+footer:hover,
+footer:focus {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#arrow:after {
+  content: "\2192";
+  display: inline-block;
+  position: relative;
+  top: -1px;
+}
+
+.fadein-slow {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 120s;
+  animation-duration: 120s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadein {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
