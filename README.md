@@ -1,7 +1,7 @@
 
 # Poem for a timepiece
 
-A slow poem, written by hand using only HTML and CSS (including the actual timer).
+A slow poem, written by hand using HTML and CSS. 
 
 ## Acknowledgements
 
@@ -10,12 +10,19 @@ A slow poem, written by hand using only HTML and CSS (including the actual timer
 
 ## Features
 
-- Weights < 1KB
-- Cross-platform (Prefixed CSS with [Autoprefixer](https://autoprefixer.github.io/) for 90% coverage)
+- The site itself weights < 1KB, and the entire repo < 1MB.
+- Cross-platform (Prefixed CSS for 90% coverage)
 
-## Badges and License
+## Badges
 
-![W3C Validation](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2F1000-msec.glitch.me%2F)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e7e98fb2-23de-4e36-951e-423599e6845e/deploy-status)](https://app.netlify.com/sites/poem-for-a-timepiece/deploys)
+
+![W3C Validation](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fpoem-for-a-timepiece.netlify.app%2F)
+![Website](https://img.shields.io/website?down_message=not%20working%20as%20expected&up_message=it%27s%20working%20fine&url=https%3A%2F%2Fpoem-for-a-timepiece.netlify.app%2F)
+![GitHub last commit](https://img.shields.io/github/last-commit/francescoimola/poem-for-a-timepiece)
+![GitHub repo size](https://img.shields.io/github/repo-size/francescoimola/poem-for-a-timepiece?color=pink)
+
+## License
 
 [GNU AGPLv3](https://github.com/francescoimola/poem-for-a-timepiece/blob/a28b2735685c3628bee96582c87181c67ff6143f/LICENSE.md)
 
