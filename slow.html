@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slow we go</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body id="body" style="display: none">
+    <table>
+      <tr>
+        <td>
+          <h1>
+            <a href="/we.html" class="fadein">we look back</a>
+          </h1>
+        </td>
+      </tr>
+    </table>
+    <script>
+      window.onload = function () {
+        setTimeout(function () {
+          document.getElementById("body").style.display = "";
+        }, 200);
+      };
+    </script>
+  </body>
+</html>
